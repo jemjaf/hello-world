@@ -1,0 +1,9 @@
+# Archivos que no necesitamos en la imagen Docker
+*.md
+*.txt
+.git
+.gitignore
+Dockerfile
+.dockerignore
+build.sh
+*.log
