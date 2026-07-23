@@ -1,8 +1,12 @@
 # Multi-stage build ultra-optimizado para tamaño mínimo
-FROM golang:1.21-alpine AS builder
+FROM --platform=$BUILDPLATFORM golang:1.21-alpine AS builder
 
 # Argumento para el idioma (por defecto español)
 ARG LANG=es
+
+# Argumento proporcionado por Docker Buildx para la arquitectura destino
+ARG TARGETOS
+ARG TARGETARCH
 
 # Instalar dependencias mínimas para compilar
 RUN apk add --no-cache git ca-certificates
@@ -14,8 +18,8 @@ WORKDIR /app
 COPY main.go .
 COPY assets/ ./assets/
 
-# Compilar la aplicación Go estáticamente para imagen scratch
-RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -ldflags '-w -s -X main.Language='$LANG -o hello-world main.go
+# Compilar la aplicación Go estáticamente para imagen scratch usando TARGETOS y TARGETARCH
+RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build -a -installsuffix cgo -ldflags '-w -s -X main.Language='$LANG -o hello-world main.go
 
 # Imagen final ultra-liviana usando scratch (imagen vacía)
 FROM scratch

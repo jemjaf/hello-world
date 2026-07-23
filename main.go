@@ -42,7 +42,7 @@ func getTexts() Texts {
 			Service:     "hello-world",
 			Version:     "1.0.0",
 			Author:      "Author: Jean Reyes (@jemjaf)",
-			Social:      "Social: GitHub, TikTok, Instagram, LinkedIn, YouTube",
+			Social:      "Social: GitHub, TikTok, Instagram, LinkedIn, YouTube, Skool",
 			Started:     "Hello World Service started",
 			Port:        "Port:",
 			RequestFrom: "Request from:",
@@ -60,7 +60,7 @@ func getTexts() Texts {
 		Service:     "hola-mundo",
 		Version:     "1.0.0",
 		Author:      "Autor: Jean Reyes (@jemjaf)",
-		Social:      "Social: GitHub, TikTok, Instagram, LinkedIn, YouTube",
+		Social:      "Social: GitHub, TikTok, Instagram, LinkedIn, YouTube, Skool",
 		Started:     "Servicio Hola Mundo iniciado",
 		Port:        "Puerto:",
 		RequestFrom: "Solicitud desde:",
@@ -254,8 +254,11 @@ func main() {
                 <a href="https://linkedin.com/in/jemjaf" class="social-icon facebook" title="LinkedIn">
                     <img src="/assets/icon-linkedin.svg" alt="LinkedIn" width="24" height="24">
                 </a>
-                <a href="https://github.com/jemjaf" class="social-icon github" title="GitHub">
+                <a href="https://github.com/jemjaf/hello-world" class="social-icon github" title="GitHub">
                     <img src="/assets/icon-github.svg" alt="GitHub" width="24" height="24">
+                </a>
+                <a href="https://skool.com/jemjaf" class="social-icon skool" title="Comunidad Skool" style="background-color: transparent;">
+                    <img src="/assets/icon-skool.jpg" alt="Skool" width="32" height="32" style="border-radius: 50%;">
                 </a>
             </div>
             
